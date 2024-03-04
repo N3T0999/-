@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pergunta Sensível</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn:active {
+            background-color: #0056b3;
+            transform: translateY(2px);
+        }
+
+        .sim-pressionado {
+            background-color: #ff1493; /* Cor da bandeira LGBT */
+        }
+
+        #nao-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Você é gay?</h1>
+
+    <div class="btn-container">
+        <a href="https://youtu.be/kDHJJC1k3X4?si=MRf-wCPXTyVCs7c" id="sim-btn" class="btn" onclick="pressionarSim()">Sim</a>
+        <button id="nao-btn" class="btn" onclick="mudarPosicaoNao()">Não</button>
+    </div>
+
+    <script>
+        function pressionarSim() {
+            // Adiciona a classe para alterar a cor do botão "Sim"
+            document.getElementById('sim-btn').classList.add('sim-pressionado');
+            // Agora você pode redirecionar para o link
+            // window.location.href = "https://youtu.be/kDHJJC1k3X4?si=MRf-wCPXTyVCs7c";
+        }
+
+        function mudarPosicaoNao() {
+            // Muda a posição do botão "Não" aleatoriamente na vertical e horizontal após ser pressionado
+            let naoBtn = document.getElementById('nao-btn');
+            let novaPosicaoVertical = Math.floor(Math.random() * window.innerHeight);
+            let novaPosicaoHorizontal = Math.floor(Math.random() * window.innerWidth);
+            
+            naoBtn.style.marginTop = novaPosicaoVertical + 'px';
+            naoBtn.style.marginLeft = novaPosicaoHorizontal + 'px';
+        }
+    </script>
+
+</body>
+</html>
